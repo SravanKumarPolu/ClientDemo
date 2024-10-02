@@ -1,6 +1,6 @@
 import React from "react";
 
-const Hero = () => {
+const Home = () => {
   return (
     <div className="h-screen w-screen bg-[rgb(0,0,72)] text-white flex justify-center items-center">
       {/* Content goes here */}
@@ -9,4 +9,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Home;
