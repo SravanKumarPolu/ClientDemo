@@ -61,7 +61,6 @@ const Industries = () => {
       "Detail 14: The industry is undergoing a shift towards mobility as a service (MaaS).",
       "Detail 15: Emerging technologies such as AI and IoT are reshaping automotive design and functionality.",
     ],
-
     Banking: [
       "Detail 1: The banking industry involves financial institutions that accept deposits from the public and create credit.",
       "Detail 2: Banks provide services such as loans, mortgages, credit cards, and investment advice.",
@@ -79,7 +78,8 @@ const Industries = () => {
       "Detail 14: Regulations such as the Basel III framework aim to strengthen the resilience of banks.",
       "Detail 15: The rise of cryptocurrencies is impacting traditional banking operations and payment systems.",
     ],
-    BlueEconomy: [
+    "Blue economy": [
+      // Corrected this line
       "Detail 1 for Blue Economy.",
       "Detail 2 for Blue Economy.",
       "Detail 3 for Blue Economy.",
@@ -96,7 +96,8 @@ const Industries = () => {
       "Detail 14 for Blue Economy.",
       "Detail 15 for Blue Economy.",
     ],
-    CapitalMarkets: [
+    "Capital markets": [
+      // Corrected this line
       "Detail 1 for Capital Markets.",
       "Detail 2 for Capital Markets.",
       "Detail 3 for Capital Markets.",
@@ -113,7 +114,8 @@ const Industries = () => {
       "Detail 14 for Capital Markets.",
       "Detail 15 for Capital Markets.",
     ],
-    CommunicationsMediaTechnology: [
+    "Communications, media & technology": [
+      // Corrected this line
       "Detail 1 for Communications, Media & Technology.",
       "Detail 2 for Communications, Media & Technology.",
       "Detail 3 for Communications, Media & Technology.",
@@ -130,20 +132,19 @@ const Industries = () => {
       "Detail 14 for Communications, Media & Technology.",
       "Detail 15 for Communications, Media & Technology.",
     ],
-
     // Add similar arrays for other industries
   };
 
   return (
-    <div className="bg-[rgb(0,0,72)] flex h-screen text-white p-6">
-      <div className="flex flex-row h-full max-w-4xl mx-auto w-full">
+    <div className="bg-[rgb(0,0,72)] flex h-screen text-white p-6 w-screen">
+      <div className="flex flex-row h-full  mx-auto w-full">
         {/* Industries List */}
-        <div className="flex-none w-1/3 h-full overflow-y-auto p-4 border-r border-white">
+        <div className="w-1/3 pl-20 ml-16 h-full overflow-y-scroll p-4 pr-0 border-r border-white scrollbar">
           <ul className="space-y-3 text-lg">
             {industries.map((industry, index) => (
               <li
                 key={index}
-                className={`py-2 px-3 rounded transition-colors duration-200 hover:bg-blue-700 cursor-pointer ${
+                className={`py-2 px-3 transition-colors duration-200 hover:bg-blue-700 cursor-pointer ${
                   activeIndustry === industry ? "bg-white text-black" : ""
                 }`}
                 onClick={() => setActiveIndustry(industry)}>
@@ -154,9 +155,9 @@ const Industries = () => {
         </div>
 
         {/* Display active industry details */}
-        <div className="flex-1 h-full overflow-y-auto p-4">
+        <div className=" w-2/3 h-screen overflow-y-hide p-4 pt-2 pl-0">
           {activeIndustry && (
-            <div className="mt-4 text-lg block bg-white text-black rounded-md p-4">
+            <div className="mt-4 h-full text-lg block bg-white text-black w-full p-4">
               <h2 className="font-bold">{activeIndustry}</h2>
               {industryDetails[activeIndustry] ? (
                 <ul>
