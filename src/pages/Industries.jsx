@@ -137,9 +137,9 @@ const Industries = () => {
 
   return (
     <div className="bg-[rgb(0,0,72)] flex h-screen text-white p-6 w-screen">
-      <div className="flex flex-row h-full  mx-auto w-full">
+      <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row  h-full  mx-auto w-full">
         {/* Industries List */}
-        <div className="w-1/3 pl-20 ml-16 h-full overflow-y-scroll p-4 pr-0 border-r border-white scrollbar">
+        <div className="w-full sm:w-1/3 pl-32 ml-16 h-full overflow-y-scroll p-4 pr-0 border-r border-white scrollbar">
           <ul className="space-y-3 text-lg">
             {industries.map((industry, index) => (
               <li
@@ -155,14 +155,21 @@ const Industries = () => {
         </div>
 
         {/* Display active industry details */}
-        <div className=" w-2/3 h-screen overflow-y-hide p-4 pt-2 pl-0">
+        <div className=" w-full sm:w-2/3 h-screen p-4 pt-2 pl-0 shadow-sm">
           {activeIndustry && (
-            <div className="mt-4 h-full text-lg block bg-white text-black w-full p-4">
+            <div className="mt-4 h-full text-lg block bg-white overflow-y-hide  text-black w-full p-4 scrollbar">
               <h2 className="font-bold">{activeIndustry}</h2>
               {industryDetails[activeIndustry] ? (
-                <ul>
+                <ul
+                  className="
+    grid 
+    grid-cols-1 
+    sm:grid-cols-2 
+    md:grid-cols-3 
+    lg:grid-cols-4 
+    gap-4">
                   {industryDetails[activeIndustry].map((detail, index) => (
-                    <li className="p-2" key={index}>
+                    <li className="p-2 border border-gray-200" key={index}>
                       {detail}
                     </li>
                   ))}
